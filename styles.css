@@ -1,0 +1,397 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* My Code Start */
+
+html{
+    background-color: #020659;
+ }
+ 
+ body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+    max-width: 375px;
+    display: grid;
+    gap: 0;
+ }
+
+/* Header Bar */
+header {
+    grid-row: 2/3;
+    background-image: linear-gradient(90deg, #2104D9 0%, #020873 35%, #020024 100%);
+    color: #FFFFFF;
+    padding: 20px;
+ }
+ 
+ h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.25em;
+    padding-bottom: 10px;
+ }
+
+/* Nav Bar */
+nav {
+    grid-row: 1/2;
+    text-transform: uppercase;
+    background-color: #030ABC;
+    position: relative;
+}
+ 
+ nav ul {
+   text-align: center;
+ }
+ 
+ nav h2 {
+    visibility: hidden;
+    width: 0px;
+ }
+ 
+ ul {
+    list-style: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+ }
+ 
+ li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    color: #FFFFFF;
+ }
+ 
+ [href="#home"] {
+    text-transform: capitalize;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 20%;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+ }
+ 
+ a:hover, input:hover {
+    background-color: #590242;
+ }
+ 
+ label {
+    cursor: pointer;
+    padding: 28 20px;
+    position: relative;
+    user-select: none;
+ }
+ 
+ label span {
+    background-color: #FFFFFF;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+    margin: 15px;
+ }
+ 
+ label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+ }
+ label span:before {
+    top: 5px;
+ }
+ label span:after {
+    top: -5px;
+ }
+ input {
+    display: none;
+ }
+ input:checked ~ ul {
+    max-height: 500px;
+ }
+ input:checked ~ label span {
+    background: transparent;
+ }
+ input:checked ~ label span:before {
+    transform: rotate(-45deg);
+ }
+ input:checked ~ label span:after {
+    transform: rotate(45deg);
+ }
+ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+ }
+ 
+
+ 
+ main {
+    background-color: #FFFFFF;
+ }
+
+h2{
+    color: #590242;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+/* Trending Song */
+#trending {
+    max-width: 375px;
+}
+ .songs {
+    display: flex;
+    overflow-x: scroll;
+ }
+
+ #trending figure {
+    margin: 10px;
+    height: 311px;
+ }
+
+#trending img {
+    position:relative;
+}
+ #trending h3 {
+    font-size: 1em;
+    color: #590242;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 8px;
+ }
+
+ #trending figcaption {
+    font-size: 1em;
+    color: #590242;
+    position: relative;
+ }
+
+.caption {
+    position: relative;
+    bottom: 50px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    background:rgba(255, 255, 255, .7);
+}
+
+audio {
+    position: relative;
+    opacity: 0.5;
+    bottom: 250px;
+    left: 5px;
+}
+
+button {
+    
+    background-color: #590242;
+    color: #FFFFFF;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 35px;
+    margin-left: 25px;
+}
+
+button:hover {
+    background-color: #020659;
+   cursor: pointer;
+}
+
+/* Your Playlist */
+
+#your {
+    max-width: 375px;
+}
+
+.your-songs {
+    background-color: #2699FB;
+    display: flex;
+    overflow: scroll;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+}
+
+#your figure {
+    background-color: #0D8DFB;
+    padding: 20px;
+    margin: 5px;
+}
+
+#your h3 {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#your figcaption {
+    font-size: 1em;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* Curated */
+
+#curated {
+    max-width: 375px;
+}
+
+.curated-songs {
+    background-color: #020873;
+    display: flex;
+    overflow: scroll;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+
+#curated figure {
+    background-color: #020659;
+    padding: 20px;
+    margin: 5px;
+}
+
+#curated h3 {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#curated figcaption {
+    font-size: 1em;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+footer {
+    background-color: #FFFFFF;
+    color: #590242;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: .75em;
+}
+@media screen and (min-width:834px) {
+    body {
+        max-width: 834px;
+    }
+    nav {
+       grid-row: 1/2;
+       text-transform: uppercase;
+       background-color: #030ABC;
+       position: relative;
+       height: fit-content;
+       top: 0;
+       display: flex;
+       align-items: center;
+    }
+ 
+    [href="#home"] {
+        text-transform: capitalize;
+        font-variant: small-caps;
+        font-weight: bold;
+        font-size: 30px;
+        position: relative;
+        padding-right: 50px;
+    }
+    
+    ul {
+       overflow: visible;
+        position: relative;
+        top: 0;
+        display: grid;
+        max-height: none;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 100%;
+    }
+    
+ 
+    label span, input {
+        display: none;
+    }
+
+    #trending {
+        max-width: 834px;
+    }
+    #your {
+        max-width: 417px;
+        height: 400px;
+    }
+    .your-songs {
+    display: block;
+    overflow: scroll;
+
+    }
+    #curated {
+       max-width: 417px;
+       height: 400px;
+    }
+    .curated-songs {
+       display: block;
+       overflow: scroll;
+    }
+    .music {
+        display: flex;
+        
+        overflow: scroll;
+    }
+ }
